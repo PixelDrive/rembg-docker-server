@@ -1,0 +1,10 @@
+services:
+  app:
+    image: ${REGISTRY?choose a registry}/bg-remover:latest
+    container_name: bg-remover
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
